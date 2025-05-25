@@ -1,35 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Portfolio</title>
 
     <!-- CSS stylings and themes -->
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css" />
 
     <!-- Icons and Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
-    <script src="https://kit.fontawesome.com/3e376e1a1c.js" crossorigin="anonymous"></script>    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=JetBrains Mono" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/3e376e1a1c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 
 <body>
     <nav class="sidebar">
         <!-- Sidebar top (Sections, home, project, etc) -->
         <div class="sidebar-top">
-            
+            <ul>
+                <li>
+                    <a href="#profil" class="nav-item">
+                        <img src="assets/images/profile.png" />
+                    </a>
+                </li>
+                <li>
+                    <a href="DIN_LINKEDIN_URL_HÄR" class="nav-item" target="_blank" rel="noopener noreferrer"
+                        title="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="DIN_GITHUB_URL_HÄR" class="nav-item" target="_blank" rel="noopener noreferrer"
+                        title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#home" class="nav-item">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cv" class="nav-item">
+                        <i class="fa-solid fa-file"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#portfolio" class="nav-item">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact" class="nav-item">
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
         <!-- Sidebar bottom (Divider, Theme toggle) -->
         <div class="sidebar-bottom">
-
+            <hr>
+            <div id="theme-toggle" class="nav-item" title="Byt tema">
+                <i class="fa-solid fa-sun"></i>
+                <i class="fa-solid fa-moon"></i>
+            </div>
         </div>
     </nav>
 
-    <main>
+    <main></main>
 
-    </main>
-    
     <!-- JS script -->
-    <script src="myscripts.js"></script> 
+    <script src="myscripts.js"></script>
 </body>
+
 </html>
