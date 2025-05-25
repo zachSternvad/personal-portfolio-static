@@ -1,0 +1,41 @@
+
+/* Färger ljust tema */
+:root {
+    --färg-bakgrund: #F6F1DE;
+    --färg-text: #3E3F5B;
+    --färg-primar: #8AB2A6;
+    --färg-accent: #ACD3A8;
+}
+
+/* Ändrar månen/solen beroende på tema */
+#theme-toggle .fa-moon {
+    display: none;
+}
+
+#theme-toggle .fa-sun {
+    display: inline-block;
+}
+
+.sidebar {
+    width: 120px;
+    height: 100vh;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--färg-accent);
+    color: var(--färg-text);   
+}
+
+/* Light mode theme */
+body {
+    background-color: var(--färg-bakgrund); /* bakgrund */
+    color: var(--färg-text); /* text */
+}
+
+hr {
+    color: var(--färg-primar);
+    background-color: var(--färg-primar);
+    height: 4px;
+    border: none;
+}
