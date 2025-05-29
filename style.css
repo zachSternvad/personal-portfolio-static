@@ -24,7 +24,27 @@
     top: 0;
     left: 0;
     background-color: var(--färg-accent);
-    color: var(--färg-text);   
+    color: var(--färg-text);  
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-top {
+    flex-grow: 1;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    margin-left: 140px;
+    padding: 20px;
 }
 
 /* Light mode theme */
@@ -38,4 +58,34 @@ hr {
     background-color: var(--färg-primar);
     height: 4px;
     border: none;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: var(--färg-text);
+    border-radius: 8px;
+}
+
+.nav-item:hover {
+    color: var(--färg-primar);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-item.active {
+    background-color: var(--färg-primar);
+}
+
+.nav-item i {
+    font-size: 24px;
+}
+
+.nav-item img {
+    max-width: 32px;
+    max-height: 32px;
 }
