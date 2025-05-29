@@ -7,6 +7,14 @@
     --färg-accent: #ACD3A8;
 }
 
+/* Färger mörkt tema */
+body.dark-mode {
+    --färg-bakgrund: #201B09;
+    --färg-text: #ACD3A8;
+    --färg-primar: #ACD3A8;
+    --färg-accent: #4D7569;
+}
+
 /* Ändrar månen/solen beroende på tema */
 #theme-toggle .fa-moon {
     display: none;
