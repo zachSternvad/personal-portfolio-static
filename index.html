@@ -1,80 +1,159 @@
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
-
-    <!-- CSS stylings and themes -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Icons and Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=JetBrains Mono" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/3e376e1a1c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zachery Sternvad - Portfolio</title>
+    <!--
+        Här länkar jag in min externa CSS-fil, style.css.
+    -->
+    <link rel="stylesheet" href="style.css">
+    <!--
+        Jag hämtar typsnittet "JetBrains Mono" från Google Fonts.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <!--
+        Jag hämtar ikoner från Lucide-biblioteket.
+    -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-
 <body>
-    <nav class="sidebar">
-        <div class="profile-social">
-            <ul>
-                <li>
-                    <img src="assets/images/profile.png" class="nav-item" alt="Profilbild" />
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/zachery-sternvad-bb66991aa/" class="nav-item" target="_blank" rel="noopener noreferrer"
-                        title="LinkedIn">
-                        <i class="fa-brands fa-linkedin"></i>
-                    </a>
-                </li>
-                <li> <a href="https://github.com/zachSternvad" class="nav-item" target="_blank" rel="noopener noreferrer"
-                        title="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
 
-        <div class="main-navigation">
-            <hr>
-            <ul>
-                <li>
-                    <a href="#home" class="nav-item">
-                        <i class="fa-solid fa-house"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#cv" class="nav-item">
-                        <i class="fa-solid fa-file"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#portfolio" class="nav-item">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#contact" class="nav-item">
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="sidebar-bottom">
-            <hr>
-            <div id="theme-toggle" class="nav-item" title="Byt tema">
-                <i class="fa-solid fa-sun"></i>
-                <i class="fa-solid fa-moon"></i>
+    <div class="page-wrapper">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/avatar.png" alt="Avatar på Zachery Sternvad" class="avatar">
+                <h2 class="sidebar-name">Zachery Sternvad</h2>
+                <p class="sidebar-title">Webbutvecklare</p>
             </div>
-        </div>
-    </nav>
+            <ul class="sidebar-links">
+                <li><a href="#about">Om Mig</a></li>
+                <li><a href="#philosophy">Min Lärandeprocess</a></li>
+                <li><a href="#projects">Projekt</a></li>
+                <li><a href="#certifications">Certifieringar</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="social-links">
+                    <a href="https://github.com/zachSternvad" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
+                    <a href="#" target="_blank" title="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="mailto:zachery.meck@gmail.com" title="Email"><i data-lucide="mail"></i></a>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" title="Växla tema">
+                    <i data-lucide="sun" class="theme-icon light"></i>
+                    <i data-lucide="moon" class="theme-icon dark"></i>
+                </button>
+            </div>
+        </nav>
 
-    <main></main>
+        <main class="main-content">
+            <section id="about" class="content-section">
+                <h1 class="section-title">Om Mig</h1>
+                <div class="about-content">
+                    <p>
+                        Jag är en problemlösare som brinner för att bygga robusta och välstrukturerade applikationer, med en stark passion för C# och .NET-ekosystemet. Jag trivs i en teknisk miljö och är van vid att arbeta direkt i terminalen.
+                    </p>
+                    <p>
+                        Sedan 2020 är Linux (Arch) mitt primära operativsystem för utveckling. Jag använder VS Code för det mesta, men för C#-projekt föredrar jag den kraftfulla miljön i JetBrains Rider. Denna vana vid professionella verktyg och plattformar gör att jag snabbt kan sätta mig in i nya system.
+                    </p>
+                     <p>
+                        På fritiden fördjupar jag mitt tekniska intresse genom att driva en hemmaserver med Proxmox och TrueNAS. Där hanterar jag bland annat virtuella maskiner och tjänster som Jellyfin, vilket har gett mig praktisk erfarenhet av systemadministration och nätverk.
+                    </p>
+                </div>
+            </section>
+            
+            <!--
+                Här är den nya, proaktiva sektionen om betyg och lärande.
+            -->
+            <section id="philosophy" class="content-section">
+                <h2 class="section-title">Min Lärandeprocess & Filosofi</h2>
+                <div class="about-content">
+                    <p>
+                        Jag tror att verklig kunskap visas genom praktiskt arbete, inte bara genom provresultat. Under min utbildning stötte jag på en utmaning där ett plötsligt lärarbyte och en tidskrävande flytt påverkade mina betyg i två kurser.
+                    </p>
+                    <p>
+                        Istället för att se det som ett hinder, använde jag situationen som en drivkraft. Jag byggde en egen Flashcard-app i C# för att effektivisera mitt lärande. Även om appen inte hann hjälpa mig fullt ut just då, lärde den mig värdet av att ta egna initiativ för att lösa problem.
+                    </p>
+                    <p>
+                        Jag anser att betyget A jag fick på mitt APL-projekt, där jag byggde en full-stack-lösning från grunden, är en mer rättvisande bild av min tekniska förmåga och mitt engagemang.
+                    </p>
+                </div>
+            </section>
+            
+            <section id="projects" class="content-section">
+                <h2 class="section-title">Huvudprojekt</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <img src="images/moneytrackerz.png" alt="Skärmdump av MoneyTrackerz-projektet" class="project-image">
+                        <div class="card-content">
+                            <h3>MoneyTrackerz (Pågående)</h3>
+                            <p class="project-description">
+                               Mitt primära lärandeprojekt för att fördjupa mina kunskaper i .NET. Applikationen byggs med Blazor och C# med målet att skapa ett verktyg för utgiftskoll.
+                            </p>
+                            <div class="project-tags">
+                                <span>Blazor</span><span>C#</span><span>.NET</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/zachSternvad/MoneyTrackerz" target="_blank" class="project-button">Visa Kod</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/globomantics.png" alt="Skärmdump av Globomantics-projektet" class="project-image">
+                        <div class="card-content">
+                            <h3>Full-stack-projekt i JavaScript (Betyg: A)</h3>
+                            <p class="project-description">
+                                Ett APL-projekt som visar min förmåga att bygga en komplett applikation. Jag byggde ett back-end med Node.js/Express och implementerade full CRUD-funktionalitet, vilket gav mig värdefull erfarenhet av hela utvecklingscykeln.
+                            </p>
+                            <div class="project-tags">
+                                <span>React</span><span>Node.js</span><span>Express.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/zachSternvad/Globomantics-APL" target="_blank" class="project-button">Visa Kod</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!--
+                Ny sektion för mindre projekt.
+            -->
+            <section id="minor-projects" class="content-section">
+                <h2 class="section-title">Mindre Projekt & Kodexempel</h2>
+                <ul class="minor-project-list">
+                    <li>
+                        <a href="https://github.com/zachSternvad/flashcard-app-csharp"><strong>Flashcard App (C#)</strong> - En konsolapp jag byggde för att lösa ett personligt studieproblem, med logik för att skapa och köra flashcard-quiz.</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zachSternvad/console-todo-list"><strong>Console To-Do List (C#)</strong> - En klassisk att-göra-lista för terminalen med funktionalitet för att spara och ladda uppgifter från fil.</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/zachSternvad/random-password-generator-cli"><strong>Password Generator (CLI)</strong> - Ett enkelt kommandoradsverktyg för att generera slumpmässiga och säkra lösenord.</a>
+                    </li>
+                </ul>
+            </section>
 
-    <!-- JS script -->
-    <script src="myscript.js"></script>
+            <!--
+                Här är den uppdaterade certifikatsektionen med bilder.
+            -->
+            <section id="certifications" class="content-section">
+                <h2 class="section-title">Certifieringar</h2>
+                <div class="certification-grid-visual">
+                    <a href="https://www.freecodecamp.org/certification/zachSternvad/foundational-c-sharp-with-microsoft" target="_blank" class="certification-card-visual">
+                        <img src="images/cert-csharp.png" alt="Certifikat för Foundational C# with Microsoft" class="certification-image">
+                        <div class="certification-title">Foundational C# with Microsoft</div>
+                    </a>
+                    <a href="https://www.freecodecamp.org/certification/zachSternvad/responsive-web-design" target="_blank" class="certification-card-visual">
+                        <img src="images/cert-webdesign.png" alt="Certifikat för Responsive Web Design" class="certification-image">
+                        <div class="certification-title">Responsive Web Design</div>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
-
 </html>

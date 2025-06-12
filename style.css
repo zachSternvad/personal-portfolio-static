@@ -1,99 +1,353 @@
-
-/* Färger ljust tema */
+/*
+   Här definierar jag CSS-variabler för Dark Mode,
+   med färgerna från Catppuccin Macchiato-paletten.
+*/
 :root {
-    --färg-bakgrund: #F6F1DE;
-    --färg-text: #3E3F5B;
-    --färg-primar: #8AB2A6;
-    --färg-accent: #ACD3A8;
+    --bg-color: #24273a;      /* Base */
+    --card-color: #1e2030;    /* Mantle */
+    --border-color: #363a4f;  /* Surface2 */
+    --primary-text: #cad3f5;  /* Text */
+    --secondary-text: #a5adce;/* Subtext0 */
+    --accent-color: #8bd5ca;  /* Teal */
+    --accent-hover: #91d7cf;  /* Ljusare Teal */
+    --tag-bg: #363a4f;        /* Surface2 */
+    --font-sans: "JetBrains Mono", monospace;
+    --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Färger mörkt tema */
-body.dark-mode {
-    --färg-bakgrund: #201B09;
-    --färg-text: #ACD3A8;
-    --färg-primar: #ACD3A8;
-    --färg-accent: #4D7569;
+/*
+    Här definierar jag variablerna för Light Mode,
+    med färgerna från Catppuccin Latte-paletten.
+*/
+body.light-mode {
+    --bg-color: #eff1f5;      /* Base */
+    --card-color: #ffffff;    /* Mantle - Använder vit för mer kontrast */
+    --border-color: #dce0e8;  /* Surface2 */
+    --primary-text: #4c4f69;  /* Text */
+    --secondary-text: #5c5f77;/* Subtext0 */
+    --accent-color: #179299;  /* Teal */
+    --accent-hover: #15848a;  /* Mörkare Teal */
+    --tag-bg: #e6e9ef;        /* Surface2 */
+    --shadow-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Ändrar månen/solen beroende på tema */
-#theme-toggle .fa-moon {
-    display: none;
+/*
+   En universell "reset" och grundläggande body-styling.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-#theme-toggle .fa-sun {
-    display: inline-block;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--secondary-text);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/*
+    Här skapar vi layouten med den fasta sidomenyn.
+*/
 .sidebar {
-    width: 120px;
-    height: 100vh;
-    min-height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--färg-accent);
-    color: var(--färg-text);  
-    display: flex; 
+    width: 280px;
+    height: 100vh;
+    background-color: var(--card-color);
+    padding: 2rem;
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    transition: background-color 0.3s ease;
+    border-right: 1px solid var(--border-color);
+    z-index: 100;
 }
 
-.main-navigation {
+.main-content {
+    margin-left: 280px; /* Samma som sidomenyns bredd */
+    padding: 3rem;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.sidebar-name {
+    color: var(--primary-text);
+    font-size: 1.5rem;
+}
+
+.sidebar-title {
+    color: var(--secondary-text);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.sidebar-links {
+    list-style: none;
+    margin-bottom: auto; /* Detta trycker ner sidfotselementen i menyn */
+}
+
+.sidebar-links li a {
+    display: block;
+    color: var(--secondary-text);
+    text-decoration: none;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar-links li a:hover {
+    color: var(--primary-text);
+}
+
+.sidebar-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: var(--primary-text);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--secondary-text);
+    transition: color 0.3s ease;
+}
+.theme-toggle:hover {
+    color: var(--primary-text);
+}
+
+/*
+    Här skapar vi den "avdelade känslan".
+*/
+.content-section {
+    max-width: 900px;
+    margin: 0 auto 6rem auto;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.content-section:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-text);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/*
+   Styling för projekt-korten
+*/
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
 }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.project-card h3 {
+    color: var(--primary-text);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
-main {
-    margin-left: 140px;
-    padding: 20px;
+.project-description {
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
 }
 
-/* Light mode theme */
-body {
-    background-color: var(--färg-bakgrund); /* bakgrund */
-    color: var(--färg-text); /* text */
-}
-
-hr {
-    color: var(--färg-primar);
-    background-color: var(--färg-primar);
-    height: 4px;
-    border: none;
-}
-
-.nav-item {
+.project-tags {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tags span {
+    background-color: var(--tag-bg);
+    color: var(--primary-text);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+.project-links {
+    margin-top: auto;
+}
+
+.project-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #1e1e2e; /* Manuell färg för bästa kontrast */
     text-decoration: none;
-    color: var(--färg-text);
+    font-weight: 700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.project-button:hover {
+    filter: brightness(1.1);
+}
+
+/*
+   Ny styling för listan med mindre projekt
+*/
+.minor-project-list {
+    list-style: none;
+}
+
+.minor-project-list li {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+.minor-project-list li:hover {
+    border-color: var(--accent-color);
+    transform: translateX(5px);
 }
 
-.nav-item:hover {
-    color: var(--färg-primar);
-    background-color: rgba(255, 255, 255, 0.2);
+.minor-project-list li a {
+    display: block;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--secondary-text);
+}
+.minor-project-list li a strong {
+    color: var(--primary-text);
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
 }
 
-.nav-item.active {
-    background-color: var(--färg-primar);
+/*
+   Ny styling för de visuella certifikatskorten
+*/
+.certification-grid-visual {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
-.nav-item i {
-    font-size: 24px;
+.certification-card-visual {
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.nav-item img {
-    max-width: 32px;
-    max-height: 32px;
+.certification-card-visual:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.certification-image {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.certification-title {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary-text);
+}
+
+/*
+   Media Query för att göra sidan responsiv.
+*/
+@media (max-width: 992px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }
