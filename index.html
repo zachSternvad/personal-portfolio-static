@@ -24,7 +24,7 @@
     <div class="page-wrapper">
         <nav class="sidebar">
             <div class="sidebar-header">
-                <img src="images/avatar.png" alt="Avatar på Zachery Sternvad" class="avatar">
+                <img src="./assets/images/profile.png" alt="Avatar på Zachery Sternvad" class="avatar">
                 <h2 class="sidebar-name">Zachery Sternvad</h2>
                 <p class="sidebar-title">Systemutvecklare .NET</p>
             </div>
@@ -34,6 +34,14 @@
                 <li><a href="#projects">Projekt</a></li>
                 <li><a href="#certifications">Certifieringar</a></li>
             </ul>
+            <!--
+                Här lägger jag till en knapp för CV-nedladdning.
+                Detta är en vanlig och professionell funktion på portfoliosidor.
+            -->
+            <a href="Zachery_Sternvad_CV.pdf" download class="cv-download-button">
+                <i data-lucide="download"></i>
+                <span>Ladda ner CV</span>
+            </a>
             <div class="sidebar-footer">
                 <div class="social-links">
                     <a href="https://github.com/zachSternvad" target="_blank" title="GitHub"><i data-lucide="github"></i></a>
@@ -63,9 +71,6 @@
                 </div>
             </section>
             
-            <!--
-                Här är den nya, proaktiva sektionen om betyg och lärande.
-            -->
             <section id="philosophy" class="content-section">
                 <h2 class="section-title">Min Lärandeprocess & Filosofi</h2>
                 <div class="about-content">
@@ -73,7 +78,7 @@
                         Jag tror att verklig kunskap visas genom praktiskt arbete, inte bara genom provresultat. Under min utbildning stötte jag på en utmaning där ett plötsligt lärarbyte och en tidskrävande flytt påverkade mina betyg i två kurser.
                     </p>
                     <p>
-                        Istället för att se det som ett hinder, använde jag situationen som en drivkraft. Jag byggde en egen Flashcard-app i C# för att effektivisera mitt lärande. Även om appen inte hann hjälpa mig fullt ut just då, lärde den mig värdet av att ta egna initiativ för att lösa problem.
+                        Istället för att se det som ett hinder, använde jag situationen som en drivkraft. För att effektivisera mitt lärande använde jag mina webbkunskaper för att snabbt bygga en Flashcard-app med HTML, CSS och JavaScript. Detta lärde mig värdet av att vara pragmatisk och använda rätt verktyg för att lösa ett problem.
                     </p>
                     <p>
                         Jag anser att betyget A jag fick på mitt APL-projekt, där jag byggde en full-stack-lösning från grunden, är en mer rättvisande bild av min tekniska förmåga och mitt engagemang.
@@ -87,9 +92,12 @@
                     <div class="project-card">
                         <img src="images/moneytrackerz.png" alt="Skärmdump av MoneyTrackerz-projektet" class="project-image">
                         <div class="card-content">
-                            <h3>MoneyTrackerz (Pågående)</h3>
+                            <h3>MoneyTrackerz (Personligt Projekt)</h3>
+                            <!--
+                                Här är den nya, fördjupade beskrivningen.
+                            -->
                             <p class="project-description">
-                               Mitt primära lärandeprojekt för att fördjupa mina kunskaper i .NET. Applikationen byggs med Blazor och C# med målet att skapa ett verktyg för utgiftskoll.
+                                Ett pågående passionsprojekt, helt skapat utanför skolan för att lösa ett eget problem: att få bättre kontroll över min privatekonomi. Jag bygger det i C# och Blazor, inte bara för att skapa ett användbart verktyg, utan också för att bemästra .NET-plattformen i ett verkligt scenario.
                             </p>
                             <div class="project-tags">
                                 <span>Blazor</span><span>C#</span><span>.NET</span>
@@ -100,11 +108,11 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <img src="images/globomantics.png" alt="Skärmdump av Globomantics-projektet" class="project-image">
+                        <img src="./assets/images/Projekts/Globomantics.png" alt="Skärmdump av Globomantics-projektet" class="project-image">
                         <div class="card-content">
                             <h3>Full-stack-projekt i JavaScript (Betyg: A)</h3>
                             <p class="project-description">
-                                Ett APL-projekt som visar min förmåga att bygga en komplett applikation. Jag byggde ett back-end med Node.js/Express och implementerade full CRUD-funktionalitet, vilket gav mig värdefull erfarenhet av hela utvecklingscykeln.
+                                Ett APL-projekt där jag tog en grundläggande front-end-mall och på eget initiativ omvandlade den till en full-stack-applikation. Jag designade och byggde ett eget back-end med Node.js/Express för att hantera data, vilket ersatte den ursprungliga, enklare localStorage-lösningen och möjliggjorde full CRUD-funktionalitet.
                             </p>
                             <div class="project-tags">
                                 <span>React</span><span>Node.js</span><span>Express.js</span>
@@ -117,14 +125,11 @@
                 </div>
             </section>
             
-            <!--
-                Ny sektion för mindre projekt.
-            -->
             <section id="minor-projects" class="content-section">
                 <h2 class="section-title">Mindre Projekt & Kodexempel</h2>
                 <ul class="minor-project-list">
                     <li>
-                        <a href="https://github.com/zachSternvad/flashcard-app-csharp"><strong>Flashcard App (C#)</strong> - En konsolapp jag byggde för att lösa ett personligt studieproblem, med logik för att skapa och köra flashcard-quiz.</a>
+                        <a href="https://github.com/zachSternvad/Flashcards-Slutprov"><strong>Flashcard Study App (JS, HTML, CSS)</strong> - Ett pragmatiskt verktyg jag byggde för att lösa ett personligt studieproblem. Appen har separata, modulära vyer för kurserna Programmering 2 och Webbutveckling 2.</a>
                     </li>
                     <li>
                         <a href="https://github.com/zachSternvad/console-todo-list"><strong>Console To-Do List (C#)</strong> - En klassisk att-göra-lista för terminalen med funktionalitet för att spara och ladda uppgifter från fil.</a>
@@ -135,9 +140,6 @@
                 </ul>
             </section>
 
-            <!--
-                Här är den uppdaterade certifikatsektionen med bilder.
-            -->
             <section id="certifications" class="content-section">
                 <h2 class="section-title">Certifieringar</h2>
                 <div class="certification-grid-visual">

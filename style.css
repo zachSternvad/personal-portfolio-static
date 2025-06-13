@@ -102,7 +102,10 @@ body {
 
 .sidebar-links {
     list-style: none;
-    margin-bottom: auto; /* Detta trycker ner sidfotselementen i menyn */
+    /*
+        Jag tar bort margin-bottom här för att ge plats
+        åt CV-knappen innan sidfoten.
+    */
 }
 
 .sidebar-links li a {
@@ -117,6 +120,31 @@ body {
 
 .sidebar-links li a:hover {
     color: var(--primary-text);
+}
+
+/*
+    Här är den nya stylingen för CV-knappen.
+    Den är designad för att se ut som en "call to action".
+*/
+.cv-download-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--primary-text);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-top: auto; /* Detta trycker ner knappen */
+    margin-bottom: 2rem; /* Avstånd till sidfoten */
+    transition: all 0.3s ease;
+}
+
+.cv-download-button:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #1e1e2e; /* Manuell färg för kontrast */
 }
 
 .sidebar-footer {
@@ -349,5 +377,8 @@ body {
     }
     .project-grid {
         grid-template-columns: 1fr;
+    }
+    .cv-download-button {
+        display: none; /* Vi gömmer CV-knappen på små skärmar för att spara plats */
     }
 }

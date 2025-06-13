@@ -7,9 +7,9 @@
     const themeToggle = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // Funktion för att applicera ett valt tema (antingen 'light' eller 'dark')
+    // Funktion för att applicera ett valt tema (antingen "light" eller "dark")
     function applyTheme(theme) {
-        // Om temat är 'light', lägg till klassen 'light-mode' på body.
+        // Om temat är "light", lägg till klassen "light-mode" på body.
         if (theme === "light") {
             body.classList.add("light-mode");
         } else {
@@ -20,7 +20,7 @@
 
     // När sidan laddas kollar jag om användaren har ett sparat tema i sin webbläsares localStorage.
     // Detta gör att sidan kommer ihåg användarens val till nästa besök.
-    // Om inget tema finns sparat, använder jag 'dark' som standard.
+    // Om inget tema finns sparat, använder jag "dark" som standard.
     const savedTheme = localStorage.getItem("theme") || "dark";
     applyTheme(savedTheme);
 
