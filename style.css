@@ -102,10 +102,6 @@ body {
 
 .sidebar-links {
     list-style: none;
-    /*
-        Jag tar bort margin-bottom här för att ge plats
-        åt CV-knappen innan sidfoten.
-    */
 }
 
 .sidebar-links li a {
@@ -122,10 +118,6 @@ body {
     color: var(--primary-text);
 }
 
-/*
-    Här är den nya stylingen för CV-knappen.
-    Den är designad för att se ut som en "call to action".
-*/
 .cv-download-button {
     display: flex;
     align-items: center;
@@ -202,12 +194,36 @@ body {
 }
 
 /*
+    Ny styling för underrubriker inom en sektion, som i certifieringar.
+*/
+.section-subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 2rem; /* Skapar avstånd om det finns flera sub-sektioner */
+}
+
+.section-subtitle:first-of-type {
+    margin-top: 0;
+}
+
+
+/*
    Styling för projekt-korten
 */
-.project-grid {
+.project-grid, .certification-grid-visual {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+}
+
+/* Jag justerar så att den slutförda certifieringen kan vara ensam på en rad om det behövs */
+.certification-grid-visual.single-item {
+    grid-template-columns: minmax(350px, 1fr);
+    max-width: 450px;
 }
 
 .project-card {
@@ -326,12 +342,6 @@ body {
 /*
    Ny styling för de visuella certifikatskorten
 */
-.certification-grid-visual {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
 .certification-card-visual {
     background-color: var(--card-color);
     border: 1px solid var(--border-color);
@@ -339,6 +349,8 @@ body {
     text-decoration: none;
     overflow: hidden;
     transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .certification-card-visual:hover {
@@ -354,11 +366,19 @@ body {
 }
 
 .certification-title {
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
     text-align: center;
     font-weight: 500;
     color: var(--primary-text);
 }
+
+.certification-issuer {
+    padding: 0 1rem 1rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-text);
+}
+
 
 /*
    Media Query för att göra sidan responsiv.
